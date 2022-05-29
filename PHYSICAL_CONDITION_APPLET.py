@@ -17,17 +17,16 @@ time.sleep(5)
 
 def write():
         print('Creating a new file')
-        path = "/User/t.most/Downloads"
+        path = input('What is you path(/User/you input(path)/Desktop) name?')
         name = 'APPLET'+'.txt'  # Name of text file coerced with +.txt
-
         try:
-            file = open(join(path, name),'w')   # Trying to create a new file or open one
-            file.write("influenza/A good rest is all you need,and drink more water.\ncommon cold/Please drink more hot water,and wear more warm clothes.\nphysical fitness/Please drink more hot water to prevent cold.\nrun a fever/Please go to the hospital for treatment.")
-            file.close()
+           file = open(name,'w')
+           file.write("influenza/A good rest is all you need,and drink more water.\ncommon cold/Please drink more hot water,and wear more warm clothes.\nphysical fitness/Please drink more hot water to prevent cold.\nrun a fever/Please go to the hospital for treatment.")
+           file.close()
 
-        except:
+        except Exception as e:
+            print(e)
             print('Something went wrong! Cannot tell what?')
-            sys.exit(0) # quit Python
 def get_name():
     name = tit.simpledialog.askstring('Visiting patients','What\'s your name: ')
     return name
@@ -46,19 +45,21 @@ def yes_text():
 
 def read_from_file():
     try:
-        with open('/User/t.most/Downloads/Apple Swift 0.5.8/swift apple/swift_apple/APPLET.txt') as file:
+        with open('APPLET.txt') as file:
             for line in file:
                 line = line.rstrip('\n')
                 condition,solution = line.split('/')
                 the_physical_condition[condition] = solution
-
+    except Exception as e:
+        print(e)
+        print("请下载源文件，并拖放到文稿文件夹下")
 def write_to_file(solution_name,condition_name):
     try:
-        with open('/User/t.most/Downloads/swift-module-copiseded-0.5.9/swift apple/swift_apple/APPLET.txt','a')as file:
+        with open('APPLET.txt','a')as file:
             file.write('\n'+ solution_name + '/' + condition_name)
     except Exception as e:
         print(e)
-        print("请下载源文件，并拖放到Downloads文件夹下")
+        print("请下载源文件，并拖放到文稿文件夹下")
             
     
 write()
