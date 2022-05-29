@@ -5,15 +5,15 @@ with open("README.rst", "r",encoding = "UTF-8") as fh:
 
 setuptools.setup(
     name="swift-module-copiseded",
-    version="0.6.0",
+    version="0.6.1",
     author="Monkey Hammer Copiseded",
     author_email="Wf6350177@163.com",
-    description="this is swift-module-copiseded 0.6.0，kill some bug",
+    description="this is swift-module-copiseded 0.6.1，kill some bug",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://pypi.org/project/swift-module-copiseded/",
     project_urls={
-        "Bug Tracker": "https://github.com/monkeyhammercopiseded/swift-module-copiseded-0.6.0/issues",
+        "Bug Tracker": "https://github.com/monkeyhammercopiseded/swift-module-copiseded-0.6.1/issues",
     },
     classifiers=[
         "Programming Language :: Python :: 3",
